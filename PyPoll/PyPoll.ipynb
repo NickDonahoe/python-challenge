@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 22,
    "metadata": {},
    "outputs": [
     {
@@ -83,7 +83,19 @@
     "# Locates candidate with most votes to determine winner\n",
     "winner = max(poll_dict, key=poll_dict.get)\n",
     "\n",
-    "with open (\"Poll_Results.txt\", \"w\") as test_file:\n",
+    "with open (\"Poll_Results.txt\", \"w\") as text_file:\n",
+    "    text_file.write(\"Election Results\\n\"\n",
+    "    \"-------------------------\\n\"\n",
+    "    f\"Total Votes: {voter_total}\\n\"\n",
+    "    \"-------------------------\\n\"\n",
+    "    f\"Khan: {'%.3f' % khn_per}% ({khn_tot})\\n\"\n",
+    "    f\"Correy: {'%.3f' % cory_per}% ({cory_tot})\\n\"\n",
+    "    f\"Li: {'%.3f' % li_per}% ({li_tot})\\n\"\n",
+    "    f\"O'Tooley: {'%.3f' % otly_per}% ({otly_tot})\\n\"\n",
+    "    \"-------------------------\\n\"\n",
+    "    f\"Winner: {winner}\\n\"\n",
+    "    \"-------------------------\\n\")\n",
+    "    \n",
     "    print(\"Election Results\")\n",
     "    print(\"-------------------------\")\n",
     "    print(f\"Total Votes: {voter_total}\")\n",
@@ -94,7 +106,7 @@
     "    print(f\"O'Tooley: {'%.3f' % otly_per}% ({otly_tot})\")\n",
     "    print(\"-------------------------\")\n",
     "    print(f\"Winner: {winner}\")\n",
-    "    print(\"-------------------------\")\n"
+    "    print(\"-------------------------\")"
    ]
   },
   {

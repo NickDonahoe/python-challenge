@@ -2,7 +2,7 @@
  "cells": [
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 1,
    "metadata": {},
    "outputs": [
     {
@@ -73,7 +73,15 @@
     "min_ind = cl.index(min(cl))\n",
     "max_mnth_decr = ol[min_ind + 1][0] + \" ($\" + str(max_decr_prof) + \")\"\n",
     "\n",
-    "with open (\"PyBank_Results.txt\", \"w\") as test_file:\n",
+    "with open (\"PyBank_Results.txt\", \"w\") as text_file:\n",
+    "    text_file.write(f\"Financial Analysis\\n\"\n",
+    "    f\"----------------------------\\n\"    \n",
+    "    f\"Total Months: {mnth_total}\\n\"\n",
+    "    f\"Total: ${period_sum}\\n\"\n",
+    "    f\"Average Change: ${avg_mthly_chng}\\n\"\n",
+    "    f\"Greatest Increase in Profits: {max_mnth_incr}\\n\"\n",
+    "    f\"Greatest Decrease in Profits: {max_mnth_decr}\\n\")\n",
+    "    \n",
     "    print(f\"Financial Analysis\")\n",
     "    print(f\"----------------------------\")    \n",
     "    print(f\"Total Months: {mnth_total}\")\n",
